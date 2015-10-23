@@ -1,39 +1,35 @@
 (function () {
     'use strict';
 
-    angular
-        .module('app')
-        .controller('MainController', MainController);
+    angular.module('app').controller('MainController', MainController);
 
     /** @ngInject */
-    function MainController($timeout, webDevTec, toastr) {
+    function MainController(MainService) {
         var vm = this;
 
-        vm.awesomeThings = [];
-        vm.classAnimation = '';
-        vm.creationDate = 1445455362674;
-        vm.showToastr = showToastr;
+        vm.avgStarCount = 4;
+        vm.reviews = [];
+        vm.orders = [
+            {label: 'Most Helpful', prop: ['-helpful_count', '+not_helpful_count']},
+            {label: 'Highest Rating', prop: '-rating'},
+            {label: 'Newest First', prop: '-date'}
+        ];
+        vm.order = vm.orders[0];
+        vm.reviewCountBy = reviewCountBy;
 
         activate();
 
         function activate() {
-            getWebDevTec();
-            $timeout(function () {
-                vm.classAnimation = 'rubberBand';
-            }, 4000);
-        }
-
-        function showToastr() {
-            toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-            vm.classAnimation = '';
-        }
-
-        function getWebDevTec() {
-            vm.awesomeThings = webDevTec.getTec();
-
-            angular.forEach(vm.awesomeThings, function (awesomeThing) {
-                awesomeThing.rank = Math.random();
+            MainService.query().then(function (reviews) {
+                vm.reviews = reviews;
             });
         }
+
+        function reviewCountBy(userType) {
+            return vm.reviews.filter(function (review) {
+                return review.user.type === userType;
+            }).length;
+        }
+
     }
 })();
