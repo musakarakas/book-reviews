@@ -308,14 +308,20 @@ button, select {
     }
   }
 
-  .cart {
+  .cart-wrapper {
     box-shadow: 0 0 10px 0 #aaa;
     background: #f8f8f8;
-    text-align: center;
-    padding: 15px;
+    padding: 15px 0;
+  }
 
-    > * {
-      margin: 3px;
+  .cart {
+    margin: auto;
+    max-width: 160px;
+    text-align: center;
+
+    button {
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
 
     .book-type {

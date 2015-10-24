@@ -1,6 +1,7 @@
 <div class="container" ng-controller="MainController as vm">
 
     <div class="page-title">
+
         <div class="text">
             <div class="book">Book</div>
             <div class="reviews">Reviews</div>
@@ -17,6 +18,7 @@
                 {{vm.reviews.length}} Total Reviews
             </div>
         </div>
+
     </div>
 
     <div class="filter-buttons-title">
@@ -24,7 +26,9 @@
     </div>
 
     <div class="row">
+
         <div class="main-content col-sm-9">
+
             <div class="reviews-header">
                 <div class="filter-buttons">
                     <button ng-repeat="f in vm.filters"
@@ -49,6 +53,7 @@
 
                 </div>
             </div>
+
             <div class="reviews-list">
                 <div class="review-item"
                      ng-repeat="review in vm.reviews | filter:vm.filterProp | orderBy:vm.order.prop | limitTo:3">
@@ -96,6 +101,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="reviews-footer">
                 <button class="btn btn-default see-all-reviews">
                     See all {{vm.reviews.length}} reviews
@@ -106,9 +112,11 @@
                     Add a review
                 </button>
             </div>
+
         </div>
 
         <div class="sidebar col-sm-3">
+
             <div class="review-stats">
                 <div class="average-rating">
                     <div class="in-stars">
@@ -144,18 +152,22 @@
                     </button>
                 </div>
             </div>
-            <div class="cart">
-                <div class="book-type">Paperback</div>
-                <div class="price">$2.00</div>
-                <button class="btn btn-warning add-to-cart">Add to cart</button>
-                <button class="btn btn-default buy-elsewhere">
-                    Buy elsewhere
-                    <i class="glyphicon glyphicon-chevron-down"></i>
-                </button>
-                <div class="or">-OR-</div>
-                <button class="btn btn-danger buy-ebook-now">Buy ebook now</button>
+
+            <div class="cart-wrapper">
+                <div class="cart">
+                    <div class="book-type">Paperback</div>
+                    <div class="price">$2.00</div>
+                    <button class="btn btn-block btn-warning add-to-cart">Add to cart</button>
+                    <button class="btn btn-block btn-default buy-elsewhere">
+                        Buy elsewhere
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </button>
+                    <div class="or">-OR-</div>
+                    <button class="btn btn-block btn-danger buy-ebook-now">Buy ebook now</button>
+                </div>
             </div>
         </div>
+
     </div>
 
 </div>
