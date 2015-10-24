@@ -1,0 +1,146 @@
+<div class="header">
+    <div class="navbar">
+        <div class="logo">
+            <img src="/assets/images/logo.png" alt="">
+        </div>
+        <div class="menu"></div>
+    </div>
+</div>
+
+<div class="container" ng-controller="MainController as vm">
+
+    <div class="page-title">
+        <div class="text">
+            <div class="book">Book</div>
+            <div class="reviews">Reviews</div>
+        </div>
+
+        <div class="total-reviews">
+            <div class="in-stars">
+                <span class="star" ng-repeat="i in [1, 2, 3, 4, 5]">
+                    {{vm.averageRating() >= i ? '★' : '☆'}}
+                </span>
+            </div>
+            <div class="in-words">
+                {{vm.reviews.length}} Total Reviews
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-buttons-title">
+        See reviews from:
+    </div>
+
+    <div class="main-content">
+        <div class="reviews-header">
+            <div class="filter-buttons">
+                <button ng-repeat="f in vm.filters"
+                        ng-click="vm.filterProp = f.filterProp"
+                        class="user-type {{f.type}}"
+                        ng-class="{active: vm.filterProp === f.filterProp}">
+                    <span class="label">{{f.label}}</span>
+                    <span class="count">({{vm.reviewCountByUserType(f.type)}})</span>
+                </button>
+            </div>
+            <div class="sorting">
+                <div class="selected">
+                    <div class="title">{{vm.order.title}}</div>
+                    <div class="reviews">Reviews</div>
+                </div>
+                <label class="select">
+                    Sort by:
+                    <select ng-model="vm.order"
+                            ng-options="item as item.label for item in vm.orders">
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="reviews-list">
+            <div class="review-item"
+                 ng-repeat="review in vm.reviews | filter:vm.filterProp | orderBy:vm.order.prop | limitTo:3">
+                <div class="review-header">
+                    <div class="review-meta">
+                        <div class="date">{{review.date | date:'MMMM d, y'}}</div>
+                        <div class="user">{{review.user.firstname}} {{review.user.lastname}}</div>
+                        <div class="book-type">{{review.book_type}}</div>
+                    </div>
+                    <div class="review-rating">
+                        <span class="star" ng-repeat="i in [1, 2, 3, 4, 5]">
+                            {{review.rating >= i ? '★' : '☆'}}
+                        </span>
+                    </div>
+                    <div class="review-title">{{review.title}}</div>
+                </div>
+                <div class="review-content">
+                    {{review.content | limitTo:1000}}
+                </div>
+                <div class="review-footer">
+                    <div class="read-more"
+                         ng-if="review.content.length > 1000">
+                        Read more...
+                    </div>
+                    <div class="helpful-stats">
+                        {{review.helpful_count}} out of {{review.helpful_count + review.not_helpful_count}}
+                        found this review helpful.
+                    </div>
+                    <div class="actions">
+                        <span>Was this review helpful to you?</span>
+                        <button>Helpful</button>
+                        <button>Not Helpful</button>
+                        <button>Flag This Content For Review</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-footer">
+            <a class="see-all-reviews">
+                See all {{vm.reviews.length}} reviews
+            </a>
+            <button class="add-a-review">Add a review</button>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="review-stats">
+            <div class="average-rating">
+                <div class="in-stars">
+                    <span class="star" ng-repeat="i in [1, 2, 3, 4, 5]">
+                        {{vm.averageRating() >= i ? '★' : '☆'}}
+                    </span>
+                </div>
+                <div class="in-words">
+                    Average Rating: {{vm.averageRating()}} out of 5 stars
+                </div>
+            </div>
+            <div class="histogram">
+                <div class="item" ng-repeat="i in [5, 4, 3, 2, 1]">
+                    <div class="star-count">{{i}} STAR</div>
+                    <div class="bar">
+                        <div class="filled"
+                             ng-style="{'width': vm.reviewCountByRating(i)*100/vm.reviews.length + '%'}">
+                        </div>
+                    </div>
+                    <div class="rating-count">
+                        ({{vm.reviewCountByRating(i)}})
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <a class="view-all-reviews">
+                    View all {{vm.reviews.length}} reviews
+                </a>
+                <button class="add-a-review">
+                    Add a review
+                </button>
+            </div>
+        </div>
+        <div class="cart">
+            <div class="book-type">Paperback</div>
+            <div class="price">$2.00</div>
+            <button class="add-to-cart">Add to cart</button>
+            <button class="buy-elsewhere">Buy elsewhere</button>
+            <div class="or">-OR-</div>
+            <button class="buy-ebook-now">Buy ebook now</button>
+        </div>
+    </div>
+
+</div>

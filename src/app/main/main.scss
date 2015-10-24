@@ -1,21 +1,234 @@
-.page-title {
-  background: red;
-  height: 100px;
+body {
+  background: #e7e7e7;
+  font-family: Brandon-Grotesque, serif;
 }
 
-.main-content {
-  background: green;
-  min-height: 1000px;
+.header {
+  height: 45px;
+  background: #333;
+  width: 100%;
+
+  .navbar {
+    margin: auto;
+    width: 960px;
+
+    .logo img {
+      width: 90px;
+      height: 45px;
+    }
+  }
 }
 
-.sidebar {
-  background: blue;
-  min-height: 1000px;
-}
+.container {
+  margin: auto;
+  width: 960px;
 
-.review-item {
-  border: dashed thin blue;
-  margin: 10px;
-  padding: 10px;
-  background: gray;
+  .page-title {
+    text-align: center;
+
+    .text {
+      font-size: 45px;
+      .book {
+        font-family: SignPainter-HouseScript, serif;
+      }
+      .reviews {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+
+    .total-reviews {
+      color: #48a7af;
+      .in-stars {
+        font-size: 30px;
+      }
+      .in-words {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .filter-buttons-title {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .main-content {
+    width: 650px;
+    margin-right: 10px;
+    float: left;
+
+    .reviews-header {
+      .filter-buttons {
+        .user-type {
+          margin: 5px;
+          &.any {
+            background: #8cc;
+          }
+          &.reader {
+            background: #cef;
+          }
+          &.critic {
+            background: #fd9;
+          }
+          &.editor {
+            background: #fcc;
+          }
+          &.librarian {
+            background: #dfd;
+          }
+          &.blogger {
+            background: #dcf;
+          }
+          &.active {
+            padding-bottom: 20px;
+          }
+          span {
+            display: block;
+            margin: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 12px;
+          }
+        }
+      }
+      .sorting {
+        margin-top: 30px;
+        .selected {
+          font-size: 24px;
+          display: inline-block;
+          .title {
+            font-family: SignPainter-HouseScript, serif;
+          }
+          .reviews {
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+        .select {
+          float: right;
+        }
+      }
+    }
+
+    .reviews-list {
+      .review-item {
+        margin: 10px;
+        padding: 10px;
+
+        .review-header {
+          font-size: 18px;
+          .review-meta {
+            border-left: solid 10px #adf;
+            padding-left: 5px;
+            line-height: 1em;
+            font-size: 14px;
+            .date {
+              font-weight: bold;
+              color: #888
+            }
+            .user {
+              font-weight: bold;
+              text-transform: uppercase;
+            }
+            .book-type {
+            }
+          }
+          .review-rating {
+            display: inline-block;
+            margin-right: 5px;
+            .star {
+              color: #48a7af;
+            }
+          }
+          .review-title {
+            display: inline;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+        .review-content {
+          font-family: Arial, serif;
+        }
+        .review-footer {
+          .read-more {
+          }
+          .helpful-stats {
+          }
+          .actions {
+          }
+        }
+      }
+    }
+
+    .reviews-footer {
+    }
+  }
+
+  .sidebar {
+    width: 300px;
+    float: left;
+
+    .review-stats {
+      border: solid thick white;
+      margin-bottom: 15px;
+      text-align: center;
+
+      .average-rating {
+        .in-stars {
+          color: #48a7af;
+          font-size: 24px;
+        }
+        .in-words {
+          color: #8f8f8f;
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+
+      .histogram {
+        .item {
+          font-weight: bold;
+
+          > div {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          .star-count {
+            width: 65px;
+            text-align: right;
+            color: #48a7af;
+          }
+
+          .bar {
+            width: 180px;
+            background: white;
+            .filled {
+              background: #48a7af;
+              height: 1em;
+            }
+          }
+
+          .rating-count {
+            color: #8f8f8f;
+          }
+        }
+      }
+
+      .footer {
+        .view-all-reviews {
+          display: block;
+        }
+        .add-a-review {
+        }
+      }
+    }
+
+    .cart {
+      background: #f8f8f8;
+    }
+  }
+
 }

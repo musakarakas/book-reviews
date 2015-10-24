@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+    <link rel="stylesheet" href="assets/fonts/font.css"/>
+    <link rel="stylesheet" href="assets/fonts/typekit.css"/>
+
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <!-- bower:css -->
     <!-- run `gulp inject` to automatically populate bower styles dependencies -->
@@ -27,105 +30,7 @@
 </p>
 <![endif]-->
 
-<div class="container" ng-controller="MainController as main">
-
-    <div class="row">
-        <div class="page-title col-sm-12 text-center">
-            <h1>Book Reviews</h1>
-
-            <div class="stars">
-                <span class="star"
-                      ng-repeat="i in [1, 2, 3, 4, 5]"
-                      ng-class="{filled: main.avgStarCount >= i}">
-                    ♥
-                </span>
-            </div>
-            <p>{{main.reviews.length}} Total Reviews</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            See reviews from:
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="main-content col-sm-8">
-            <div class="reviews-header">
-                <div class="filter-buttons">
-                    <!--TODO: ng-repeat filterer in main.filterers -->
-                    <button ng-click="filterProp = undefined">
-                        Everyone ({{main.reviews.length}})
-                    </button>
-                    <button ng-click="filterProp = {user: {type: 'reader'}}">
-                        Readers ({{main.reviewCountBy('reader')}})
-                    </button>
-                    <button ng-click="filterProp = {user: {type: 'critic'}}">
-                        Critics ({{main.reviewCountBy('critic')}})
-                    </button>
-                    <button ng-click="filterProp = {user: {type: 'editor'}}">
-                        Editor ({{main.reviewCountBy('editor')}})
-                    </button>
-                    <button ng-click="filterProp = {user: {type: 'librarian'}}">
-                        Librarians ({{main.reviewCountBy('librarian')}})
-                    </button>
-                    <button ng-click="filterProp = {user: {type: 'blogger'}}">
-                        Bloggers ({{main.reviewCountBy('blogger')}})
-                    </button>
-                </div>
-                <div class="title">
-                    {{order.label}}
-                    Reviews
-                </div>
-                <div class="filter-buttons">
-                    <label>
-                        Sort by:
-                        <select ng-model="main.order"
-                                ng-options="item as item.label for item in main.orders">
-                        </select>
-                    </label>
-                </div>
-            </div>
-            <div class="reviews-list">
-                <div class="review-item"
-                     ng-repeat="review in main.reviews | filter:filterProp | orderBy:main.order.prop | limitTo:3">
-                    <div class="review-header">
-                        <div class="review-meta">
-                            <pre>{{review.user|json}}</pre>
-                            <p>{{review.date}}</p>
-
-                            <p>{{review.user.firstname}} {{review.user.lastname}}</p>
-
-                            <p>{{review.book_type}}</p>
-                        </div>
-                        <div class="review-rating">Rating: {{review.rating}}</div>
-                        <div class="review-title">{{review.title}}</div>
-                    </div>
-                    <div class="review-content">{{review.content}}</div>
-                    <div class="review-footer">
-                        <div class="helpful-stats">
-                            {{review.helpful_count}} out of {{review.helpful_count + review.not_helpful_count}}
-                            found this review helpful.
-                        </div>
-                        <div>
-                            <span>Was this review helpful to you?</span>
-                            <button>Helpful</button>
-                            <button>Not Helpful</button>
-                            <button>Flag This Content For Review</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="reviews-footer"></div>
-        </div>
-        <div class="sidebar col-sm-4">
-            <div class="star-box"></div>
-            <div class="cart"></div>
-        </div>
-    </div>
-
-</div>
+<div ng-include="'app/main/main.html'"></div>
 
 <!-- build:js(src) scripts/vendor.js -->
 <!-- bower:js -->
