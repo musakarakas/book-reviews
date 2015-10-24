@@ -4,7 +4,7 @@
     angular.module('app').controller('MainController', MainController);
 
     /** @ngInject */
-    function MainController(MainService) {
+    function MainController(ReviewService) {
         var vm = this;
 
         vm.averageRating = averageRating;
@@ -30,7 +30,7 @@
         activate();
 
         function activate() {
-            MainService.query().then(function (reviews) {
+            ReviewService.query().then(function (reviews) {
                 vm.reviews = reviews;
             });
         }

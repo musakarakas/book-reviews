@@ -1,9 +1,9 @@
 (function () {
 
-    angular.module('app').service('MainService', MainService);
+    angular.module('app').service('ReviewService', ReviewService);
 
     /** @ngInject */
-    function MainService($http) {
+    function ReviewService($http) {
         return {
             query: query
         };
