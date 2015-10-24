@@ -18,7 +18,6 @@
                 {{vm.reviews.length}} Total Reviews
             </div>
         </div>
-
     </div>
 
     <div class="filter-buttons-title">
@@ -57,6 +56,7 @@
             <div class="reviews-list">
                 <div class="review-item"
                      ng-repeat="review in vm.reviews | filter:vm.filterProp | orderBy:vm.order.prop | limitTo:3">
+
                     <div class="review-header">
                         <div class="review-meta">
                             <div class="date">{{review.date | date:'MMMM d, y'}}</div>
@@ -71,9 +71,11 @@
                         </div>
                         <div class="review-title">{{review.title}}</div>
                     </div>
+
                     <div class="review-content">
                         {{review.content | limitTo:1000}}
                     </div>
+
                     <div class="review-footer">
                         <a href="" class="read-more" ng-if="review.content.length > 1000">
                             Read more...
@@ -112,7 +114,6 @@
                     Add a review
                 </button>
             </div>
-
         </div>
 
         <div class="sidebar col-sm-3">
@@ -129,6 +130,7 @@
                         Average Rating: {{vm.averageRating()}} out of 5 stars
                     </div>
                 </div>
+
                 <div class="histogram">
                     <div class="item" ng-repeat="i in [5, 4, 3, 2, 1]">
                         <div class="star-count">{{i}} STAR</div>
@@ -142,6 +144,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="footer">
                     <a class="view-all-reviews">
                         View all {{vm.reviews.length}} reviews
@@ -155,19 +158,27 @@
 
             <div class="cart-wrapper">
                 <div class="cart">
+
                     <div class="book-type">Paperback</div>
+
                     <div class="price">$2.00</div>
-                    <button class="btn btn-block btn-warning add-to-cart">Add to cart</button>
+
+                    <button class="btn btn-block btn-warning add-to-cart">
+                        Add to cart
+                    </button>
+
                     <button class="btn btn-block btn-default buy-elsewhere">
                         Buy elsewhere
                         <i class="glyphicon glyphicon-chevron-down"></i>
                     </button>
+
                     <div class="or">-OR-</div>
-                    <button class="btn btn-block btn-danger buy-ebook-now">Buy ebook now</button>
+
+                    <button class="btn btn-block btn-danger buy-ebook-now">
+                        Buy ebook now
+                    </button>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
