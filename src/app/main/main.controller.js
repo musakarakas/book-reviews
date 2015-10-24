@@ -1,13 +1,13 @@
 (function () {
     'use strict';
 
-    angular.module('app').controller('MainController', MainController);
+    angular.module('app')
+        .controller('MainController', MainController);
 
     /** @ngInject */
     function MainController(ReviewService) {
         var vm = this;
 
-        vm.averageRating = averageRating;
         vm.reviews = [];
         vm.filters = [
             {label: 'Everyone', type: 'any'},
@@ -24,8 +24,11 @@
             {label: 'Newest First', title: 'Newest', prop: '-date'}
         ];
         vm.order = vm.orders[0];
+        vm.averageRating = averageRating;
         vm.reviewCountByUserType = reviewCountByUserType;
         vm.reviewCountByRating = reviewCountByRating;
+        vm.helpful = helpful;
+        vm.notHelpful = notHelpful;
 
         activate();
 
@@ -58,6 +61,18 @@
             return vm.reviews.filter(function (review) {
                 return review.user.type === userType;
             }).length;
+        }
+
+        function helpful(review){
+            ReviewService.helpful(review.id).then(function () {
+                review.helpful_count++;
+            });
+        }
+
+        function notHelpful(review){
+            ReviewService.notHelpful(review.id).then(function () {
+                review.not_helpful_count++;
+            });
         }
 
     }
