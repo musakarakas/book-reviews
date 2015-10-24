@@ -5,11 +5,10 @@
 
     /** @ngInject */
     function ReviewService(API_URL, $http) {
-        return {
-            query: query,
-            helpful: helpful,
-            notHelpful: notHelpful
-        };
+
+        this.query = query;
+        this.helpful = helpful;
+        this.notHelpful = notHelpful;
 
         function query() {
             return $http.get(API_URL + 'reviews').then(function (response) {

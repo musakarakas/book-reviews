@@ -24,6 +24,7 @@
             {label: 'Newest First', title: 'Newest', prop: '-date'}
         ];
         vm.order = vm.orders[0];
+
         vm.averageRating = averageRating;
         vm.reviewCountByUserType = reviewCountByUserType;
         vm.reviewCountByRating = reviewCountByRating;
@@ -48,18 +49,18 @@
             return Math.round(average);
         }
 
-        function reviewCountByRating(rating) {
-            return vm.reviews.filter(function (review) {
-                return review.rating === rating;
-            }).length;
-        }
-
         function reviewCountByUserType(userType) {
             if (userType === 'any')
                 return vm.reviews.length;
 
             return vm.reviews.filter(function (review) {
                 return review.user.type === userType;
+            }).length;
+        }
+
+        function reviewCountByRating(rating) {
+            return vm.reviews.filter(function (review) {
+                return review.rating === rating;
             }).length;
         }
 
