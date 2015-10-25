@@ -1,0 +1,53 @@
+.navbar {
+  background: #333;
+  .container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.navbar-header img {
+  max-width: 90px;
+  max-height: 45px;
+}
+
+.navbar-nav {
+  font-family: Brandon-Grotesque, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+
+  form {
+    padding-right: 0;
+    margin: 0;
+  }
+  .search {
+    input, button {
+      height: 50px;
+    }
+    input {
+      width: 250px !important;
+      font-family: Helvetica, sans-serif;
+      font-size: 11px;
+    }
+    button {
+      width: 50px;
+      background: #579;
+      color: white;
+    }
+  }
+  .sign-in {
+    background: green;
+  }
+  .shopping-cart {
+    background: #579;
+  }
+  li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  a {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white !important;
+  }
+}

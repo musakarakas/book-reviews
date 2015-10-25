@@ -116,69 +116,8 @@
             </div>
         </div>
 
-        <div class="sidebar col-sm-3">
-
-            <div class="review-stats">
-                <div class="average-rating">
-                    <div class="in-stars">
-                        <span ng-repeat="i in [1, 2, 3, 4, 5]"
-                              class="star glyphicon glyphicon-star"
-                              ng-class="{active: vm.averageRating() >= i}">
-                        </span>
-                    </div>
-                    <div class="in-words">
-                        Average Rating: {{vm.averageRating()}} out of 5 stars
-                    </div>
-                </div>
-
-                <div class="histogram">
-                    <div class="item" ng-repeat="i in [5, 4, 3, 2, 1]">
-                        <div class="star-count">{{i}} STAR</div>
-                        <div class="bar">
-                            <div class="filled"
-                                 ng-style="{'width': vm.reviewCountByRating(i)*100/vm.reviews.length + '%'}">
-                            </div>
-                        </div>
-                        <div class="rating-count">
-                            ({{vm.reviewCountByRating(i)}})
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer">
-                    <a class="view-all-reviews">
-                        View all {{vm.reviews.length}} reviews
-                    </a>
-                    <button class="add-a-review btn btn-primary">
-                        <i class="glyphicon glyphicon-comment"></i>
-                        Add a review
-                    </button>
-                </div>
-            </div>
-
-            <div class="cart-wrapper">
-                <div class="cart">
-
-                    <div class="book-type">Paperback</div>
-
-                    <div class="price">$2.00</div>
-
-                    <button class="btn btn-block btn-warning add-to-cart">
-                        Add to cart
-                    </button>
-
-                    <button class="btn btn-block btn-default buy-elsewhere">
-                        Buy elsewhere
-                        <i class="glyphicon glyphicon-chevron-down"></i>
-                    </button>
-
-                    <div class="or">-OR-</div>
-
-                    <button class="btn btn-block btn-danger buy-ebook-now">
-                        Buy ebook now
-                    </button>
-                </div>
-            </div>
+        <div ng-include="'app/main/sidebar.html'"
+             class="sidebar col-sm-3">
         </div>
     </div>
 </div>

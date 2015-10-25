@@ -1,0 +1,121 @@
+.sidebar {
+
+  .review-stats {
+    border: solid thin white;
+    box-shadow: 0 0 10px 0 #aaa;
+    padding: 15px 0 15px;
+    margin-bottom: 15px;
+    text-align: center;
+
+    .average-rating {
+      margin-bottom: 10px;
+      .in-stars {
+        font-size: 20px;
+        height: 1em;
+        text-shadow: 5px 5px 10px #aaa;
+        .star {
+          color: #48a7af;
+          opacity: .3;
+          margin-right: 2px;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+      .in-words {
+        font-family: Brandon-Grotesque, sans-serif;
+        font-weight: 900;
+        font-size: 12px;
+        color: #8f8f8f;
+      }
+    }
+
+    .histogram {
+      .item {
+        font-family: Brandon-Grotesque, sans-serif;
+        font-weight: 900;
+        font-size: 14px;
+        color: #8f8f8f;
+
+        > div {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .star-count {
+          width: 50px;
+          text-align: right;
+          color: #48a7af;
+        }
+
+        .bar {
+          width: 60%;
+          background: white;
+          .filled {
+            background: #48a7af;
+            height: 1em;
+          }
+        }
+
+        .rating-count {
+        }
+      }
+    }
+
+    .footer {
+      .view-all-reviews {
+        font-family: Brandon-Grotesque, sans-serif;
+        font-weight: 900;
+        font-size: 14px;
+        color: #48a7af;
+        display: block;
+      }
+      .add-a-review {
+        font-family: Brandon-Grotesque, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .cart-wrapper {
+    box-shadow: 0 0 10px 0 #aaa;
+    background: #f8f8f8;
+    padding: 15px 0;
+  }
+
+  .cart {
+    margin: auto;
+    max-width: 160px;
+    text-align: center;
+
+    font-family: Brandon-Grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+
+    button {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .book-type {
+      font-family: SignPainter-HouseScript, serif;
+      font-weight: 500;
+      font-size: 24px;
+    }
+    .price {
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .add-to-cart {
+    }
+    .buy-elsewhere {
+    }
+    .or {
+      font-size: 14px;
+    }
+    .buy-ebook-now {
+    }
+
+  }
+}
