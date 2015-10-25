@@ -7,10 +7,10 @@
         var API_URL;
 
         beforeEach(module('app'));
-        beforeEach(inject(function (_$controller_, _$httpBackend_, _API_URL_) {
-            vm = _$controller_('MainController');
-            $httpBackend = _$httpBackend_;
-            API_URL = _API_URL_;
+        beforeEach(inject(function ($injector, $controller) {
+            vm = $controller('MainController');
+            $httpBackend = $injector.get('$httpBackend');
+            API_URL = $injector.get('API_URL');
         }));
 
         it('should define filters to filter reviews by user type', function () {
