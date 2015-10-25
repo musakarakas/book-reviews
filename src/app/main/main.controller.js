@@ -40,13 +40,14 @@
         }
 
         function averageRating() {
+            if (!vm.reviews.length)
+                return 0;
+
             var total = vm.reviews.reduce(function sum(total, review) {
                 return total + review.rating;
             }, 0);
 
-            var average = total / vm.reviews.length;
-
-            return Math.round(average);
+            return Math.round(total / vm.reviews.length);
         }
 
         function reviewCountByUserType(userType) {
@@ -64,13 +65,13 @@
             }).length;
         }
 
-        function helpful(review){
+        function helpful(review) {
             ReviewService.helpful(review.id).then(function () {
                 review.helpful_count++;
             });
         }
 
-        function notHelpful(review){
+        function notHelpful(review) {
             ReviewService.notHelpful(review.id).then(function () {
                 review.not_helpful_count++;
             });
