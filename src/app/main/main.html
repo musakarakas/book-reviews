@@ -49,7 +49,6 @@
                                 ng-options="item as item.label for item in vm.orders">
                         </select>
                     </label>
-
                 </div>
             </div>
 
@@ -85,6 +84,7 @@
                             {{review.helpful_count}} out of {{review.helpful_count + review.not_helpful_count}}
                             found this review helpful.
                         </div>
+
                         <div class="actions">
                             <span class="is-this-helpful">Was this review helpful to you?</span>
                             <a class="vote helpful" href="" ng-click="vm.helpful(review)">
@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <div ng-include="'app/main/sidebar.html'"
+        <div ng-include="'app/sidebar/sidebar.html'"
              class="sidebar col-sm-3">
         </div>
     </div>
