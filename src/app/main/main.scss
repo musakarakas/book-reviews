@@ -56,164 +56,161 @@ button, select {
   text-transform: uppercase;
 }
 
-.main-content {
-
-  .reviews-header {
-    border-top: dotted thin #ccc;
-    .ribbons {
-      margin-top: -7px;
-      .ribbon {
-        /*See ribbons.scss*/
+.reviews-header {
+  border-top: dotted thin #ccc;
+  .ribbons {
+    margin-top: -7px;
+    .ribbon {
+      /*See ribbons.scss*/
+    }
+  }
+  .sorting {
+    margin-top: 30px;
+    .selected {
+      font-size: 24px;
+      display: inline-block;
+      .title, .reviews {
+        line-height: 1em;
+      }
+      .title {
+        font-family: SignPainter-HouseScript, sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+      }
+      .reviews {
+        font-family: Brandon-Grotesque, sans-serif;
+        font-weight: 900;
+        font-size: 24px;
+        text-transform: uppercase;
       }
     }
-    .sorting {
-      margin-top: 30px;
-      .selected {
-        font-size: 24px;
-        display: inline-block;
-        .title, .reviews {
-          line-height: 1em;
-        }
-        .title {
-          font-family: SignPainter-HouseScript, sans-serif;
-          font-weight: 500;
-          font-size: 24px;
-        }
-        .reviews {
-          font-family: Brandon-Grotesque, sans-serif;
-          font-weight: 900;
-          font-size: 24px;
-          text-transform: uppercase;
-        }
+    .select {
+      .sort-by {
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
       }
-      .select {
-        .sort-by {
-          font-family: Arial, sans-serif;
-          font-weight: bold;
-          font-size: 12px;
-        }
-        select {
-          font-family: Brandon-Grotesque, sans-serif;
-          font-weight: bold;
-          font-size: 12px;
-        }
+      select {
+        font-family: Brandon-Grotesque, sans-serif;
+        font-weight: bold;
+        font-size: 12px;
       }
     }
   }
+}
 
-  .reviews-list {
-    .review-item {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding: 10px;
-      border-bottom: dotted thin #ccc;
+.reviews-list {
+  .review-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: dotted thin #ccc;
 
-      .review-header {
-        font-size: 18px;
-        .review-meta {
-          border-left: solid 10px #adf;
-          padding-left: 5px;
-          margin-bottom: 10px;
+    .review-header {
+      font-size: 18px;
+      .review-meta {
+        border-left: solid 10px #adf;
+        padding-left: 5px;
+        margin-bottom: 10px;
 
-          font-family: Brandon-Grotesque, sans-serif;
-          font-size: 14px;
-          line-height: 1em;
+        font-family: Brandon-Grotesque, sans-serif;
+        font-size: 14px;
+        line-height: 1em;
 
-          .date {
-            font-weight: 900;
-            color: #8f8f8f;
-          }
-          .user {
-            font-weight: 900;
-            text-transform: uppercase;
-          }
-          .book-type {
-          }
-        }
-        .review-rating {
-          display: inline-block;
-          margin-right: 5px;
-          .star {
-            color: #48a7af;
-            opacity: .3;
-            margin: 2px;
-            &.active {
-              opacity: 1;
-            }
-          }
-        }
-        .review-title {
-          font-family: Brandon-Grotesque, sans-serif;
+        .date {
           font-weight: 900;
-          font-size: 18px;
-          display: inline;
+          color: #8f8f8f;
+        }
+        .user {
+          font-weight: 900;
           text-transform: uppercase;
         }
+        .book-type {
+        }
       }
-      .review-content {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-      }
-      .review-footer {
-
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-
-        .read-more {
-          font-weight: bold;
+      .review-rating {
+        display: inline-block;
+        margin-right: 5px;
+        .star {
           color: #48a7af;
+          opacity: .3;
+          margin: 2px;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+      .review-title {
+        font-family: Brandon-Grotesque, sans-serif;
+        font-weight: 900;
+        font-size: 18px;
+        display: inline;
+        text-transform: uppercase;
+      }
+    }
+    .review-content {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .review-footer {
+
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+
+      .read-more {
+        font-weight: bold;
+        color: #48a7af;
+        float: right;
+      }
+      .helpful-stats {
+        color: #8f8f8f;
+        clear: both;
+      }
+      .actions {
+        .is-this-helpful {
+          color: #8f8f8f;
+          display: inline-block;
+        }
+        .vote, .flag {
+          color: #48a7af;
+        }
+        .vote {
+          display: inline-block;
+          padding-left: 10px;
+          padding-right: 10px;
+
+          &.helpful {
+          }
+          &.not-helpful {
+            border-left: dotted thin gray;
+          }
+        }
+        .flag {
+          font-size: 12px;
           float: right;
         }
-        .helpful-stats {
-          color: #8f8f8f;
-          clear: both;
-        }
-        .actions {
-          .is-this-helpful {
-            color: #8f8f8f;
-            display: inline-block;
-          }
-          .vote, .flag {
-            color: #48a7af;
-          }
-          .vote {
-            display: inline-block;
-            padding-left: 10px;
-            padding-right: 10px;
-
-            &.helpful {
-            }
-            &.not-helpful {
-              border-left: dotted thin gray;
-            }
-          }
-          .flag {
-            font-size: 12px;
-            float: right;
-          }
-        }
       }
     }
   }
+}
 
-  .reviews-footer {
-    & > * {
-      font-family: Brandon-Grotesque, sans-serif;
-      font-weight: bold;
-      font-size: 12px;
+.reviews-footer {
+  & > * {
+    font-family: Brandon-Grotesque, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .see-all-reviews {
+    width: 170px;
+    color: #399;
+    .glyphicon {
+      margin-left: 5px;
     }
-    .see-all-reviews {
-      width: 170px;
-      color: #399;
-      .glyphicon {
-        margin-left: 5px;
-      }
-    }
-    .add-a-review {
-      width: 145px;
-      .glyphicon {
-        margin-right: 5px;
-      }
+  }
+  .add-a-review {
+    width: 145px;
+    .glyphicon {
+      margin-right: 5px;
     }
   }
 }
