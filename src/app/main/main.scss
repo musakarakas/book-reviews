@@ -1,5 +1,6 @@
 body {
   padding-top: 70px;
+  padding-bottom: 20px;
   background: #e7e7e7;
 }
 
@@ -15,7 +16,7 @@ button, select {
       line-height: 1em;
     }
     .book {
-      font-family: SignPainter-HouseScript, serif;
+      font-family: SignPainter-HouseScript, sans-serif;
       font-weight: 500;
       font-size: 34px;
     }
@@ -33,6 +34,9 @@ button, select {
       font-size: 30px;
       color: white;
       text-shadow: 5px 5px 10px #aaa;
+      .star {
+        margin: 5px;
+      }
       .star.active {
         color: #48a7af;
       }
@@ -132,6 +136,7 @@ button, select {
           .star {
             color: #48a7af;
             opacity: .3;
+            margin: 2px;
             &.active {
               opacity: 1;
             }
@@ -192,13 +197,23 @@ button, select {
   }
 
   .reviews-footer {
-    font-family: Brandon-Grotesque, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
+    & > * {
+      font-family: Brandon-Grotesque, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+    }
     .see-all-reviews {
+      width: 170px;
       color: #399;
+      .glyphicon {
+        margin-left: 5px;
+      }
     }
     .add-a-review {
+      width: 145px;
+      .glyphicon {
+        margin-right: 5px;
+      }
     }
   }
 }

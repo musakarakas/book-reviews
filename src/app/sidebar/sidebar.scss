@@ -16,7 +16,7 @@
         .star {
           color: #48a7af;
           opacity: .3;
-          margin-right: 2px;
+          margin: 2px;
           &.active {
             opacity: 1;
           }
@@ -64,16 +64,22 @@
 
     .footer {
       .view-all-reviews {
+        display: block;
+        margin: 5px;
         font-family: Brandon-Grotesque, sans-serif;
         font-weight: 900;
         font-size: 14px;
         color: #48a7af;
-        display: block;
+        text-transform: capitalize;
       }
       .add-a-review {
+        width: 145px;
         font-family: Brandon-Grotesque, sans-serif;
         font-weight: bold;
         font-size: 12px;
+        .glyphicon {
+          margin-right: 5px;
+        }
       }
     }
   }
@@ -89,9 +95,11 @@
     max-width: 160px;
     text-align: center;
 
-    font-family: Brandon-Grotesque, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
+    & > * {
+      font-family: Brandon-Grotesque, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+    }
 
     button {
       margin-top: 10px;
@@ -99,7 +107,7 @@
     }
 
     .book-type {
-      font-family: SignPainter-HouseScript, serif;
+      font-family: SignPainter-HouseScript, sans-serif;
       font-weight: 500;
       font-size: 24px;
     }
@@ -110,6 +118,9 @@
     .add-to-cart {
     }
     .buy-elsewhere {
+      .glyphicon {
+        margin-left: 5px;
+      }
     }
     .or {
       font-size: 14px;
