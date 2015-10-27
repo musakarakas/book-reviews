@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="filter-buttons-title">
+    <div class="ribbons-title">
         See reviews from:
     </div>
 
@@ -29,14 +29,14 @@
         <div class="main-content col-sm-9">
 
             <div class="reviews-header">
-                <div class="filter-buttons">
-                    <button ng-repeat="f in vm.filters"
-                            ng-click="vm.filterProp = f.filterProp"
-                            class="btn user-type {{f.type}}"
-                            ng-class="{active: vm.filterProp === f.filterProp}">
-                        <span class="label">{{f.label}}</span>
-                        <span class="count">({{vm.reviewCountByUserType(f.type)}})</span>
-                    </button>
+                <div class="ribbons">
+                    <span ng-repeat="f in vm.filters"
+                          ng-click="vm.filterProp = f.filterProp"
+                          class="ribbon {{f.type}}"
+                          ng-class="{active: vm.filterProp === f.filterProp}">
+                        <span>{{f.label}}</span>
+                        <span>({{vm.reviewCountByUserType(f.type)}})</span>
+                    </span>
                 </div>
                 <div class="sorting">
                     <div class="selected">

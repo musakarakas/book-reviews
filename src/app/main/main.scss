@@ -45,7 +45,7 @@ button, select {
   }
 }
 
-.filter-buttons-title {
+.ribbons-title {
   font-family: Brandon-Grotesque, sans-serif;
   font-weight: 900;
   font-size: 14px;
@@ -56,41 +56,10 @@ button, select {
 
   .reviews-header {
     border-top: dotted thin #ccc;
-    .filter-buttons {
+    .ribbons {
       margin-top: -7px;
-      .user-type {
-        margin: 5px;
-        width: 80px;
-        padding: 10px 0 20px;
-        &:not(.active) {
-          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
-        }
-        &.any {
-          background: #8cc;
-        }
-        &.reader {
-          background: #cef;
-        }
-        &.critic {
-          background: #fd9;
-        }
-        &.editor {
-          background: #fcc;
-        }
-        &.librarian {
-          background: #dfd;
-        }
-        &.blogger {
-          background: #dcf;
-        }
-        span {
-          font-family: Brandon-Grotesque, sans-serif;
-          font-weight: 900;
-          font-size: 12px;
-          display: block;
-          line-height: 1em;
-          color: black;
-        }
+      .ribbon {
+        /*See ribbons.scss*/
       }
     }
     .sorting {

@@ -1,0 +1,84 @@
+.ribbon {
+  width: 75px;
+  height: 60px;
+  margin: 5px;
+  padding-top: 10px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+
+  $box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: $box-shadow;
+
+  span {
+    font-family: Brandon-Grotesque, sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    display: block;
+    line-height: 1.2em;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    border-top: 15px solid red;
+  }
+
+  &:before {
+    left: 37px;
+    border-left: 38px solid transparent;
+  }
+
+  &:after {
+    left: 0;
+    border-right: 38px solid transparent;
+  }
+
+  &.active {
+    height: 75px;
+    box-shadow: inset $box-shadow;
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      left: 37px;
+    }
+  }
+
+  @mixin ribbon-color($color) {
+    background: $color;
+    &:before, &:after {
+      border-top-color: $color;
+    }
+  }
+
+  &.any {
+    @include ribbon-color(#8cc);
+  }
+
+  &.reader {
+    @include ribbon-color(#cef);
+  }
+
+  &.critic {
+    @include ribbon-color(#fd9);
+  }
+
+  &.editor {
+    @include ribbon-color(#fcc);
+  }
+
+  &.librarian {
+    @include ribbon-color(#dfd);
+  }
+
+  &.blogger {
+    @include ribbon-color(#dcf);
+  }
+
+}
