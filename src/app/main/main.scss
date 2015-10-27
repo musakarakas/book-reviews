@@ -16,14 +16,10 @@ button, select {
       line-height: 1em;
     }
     .book {
-      font-family: SignPainter-HouseScript, sans-serif;
-      font-weight: 500;
-      font-size: 34px;
+      @include font(34px, 500, SignPainter-HouseScript);
     }
     .reviews {
-      font-family: Brandon-Grotesque, sans-serif;
-      font-weight: 900;
-      font-size: 28px;
+      @include font(28px);
       text-transform: uppercase;
     }
   }
@@ -42,17 +38,13 @@ button, select {
       }
     }
     .total {
-      font-family: Brandon-Grotesque, sans-serif;
-      font-weight: 900;
-      font-size: 14px;
+      @include font();
     }
   }
 }
 
 .ribbons-title {
-  font-family: Brandon-Grotesque, sans-serif;
-  font-weight: 900;
-  font-size: 14px;
+  @include font();
   text-transform: uppercase;
 }
 
@@ -73,27 +65,19 @@ button, select {
         line-height: 1em;
       }
       .title {
-        font-family: SignPainter-HouseScript, sans-serif;
-        font-weight: 500;
-        font-size: 24px;
+        @include font(24px, 500, SignPainter-HouseScript);
       }
       .reviews {
-        font-family: Brandon-Grotesque, sans-serif;
-        font-weight: 900;
-        font-size: 24px;
+        @include font(24px);
         text-transform: uppercase;
       }
     }
     .select {
       .sort-by {
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        font-size: 12px;
+        @include font(12px, bold, Arial);
       }
       select {
-        font-family: Brandon-Grotesque, sans-serif;
-        font-weight: bold;
-        font-size: 12px;
+        @include font(12px, bold);
       }
     }
   }
@@ -112,20 +96,17 @@ button, select {
         border-left: solid 10px #adf;
         padding-left: 5px;
         margin-bottom: 10px;
-
-        font-family: Brandon-Grotesque, sans-serif;
-        font-size: 14px;
         line-height: 1em;
+        @include font();
 
         .date {
-          font-weight: 900;
           color: #8f8f8f;
         }
         .user {
-          font-weight: 900;
           text-transform: uppercase;
         }
         .book-type {
+          font-weight: normal;
         }
       }
       .review-rating {
@@ -141,21 +122,16 @@ button, select {
         }
       }
       .review-title {
-        font-family: Brandon-Grotesque, sans-serif;
-        font-weight: 900;
-        font-size: 18px;
+        @include font(18px);
         display: inline;
         text-transform: uppercase;
       }
     }
     .review-content {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      @include font(14px, normal, Arial);
     }
     .review-footer {
-
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      @include font(14px, normal, Arial);
 
       .read-more {
         font-weight: bold;
@@ -196,9 +172,7 @@ button, select {
 
 .reviews-footer {
   & > * {
-    font-family: Brandon-Grotesque, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
+    @include font(12px, bold);
   }
   .see-all-reviews {
     width: 170px;

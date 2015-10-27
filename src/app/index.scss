@@ -23,12 +23,10 @@ $btn-danger-bg: #f45600;
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
+@mixin font($size:14px, $weight:900, $family:Brandon-Grotesque) {
+  font-family: $family, sans-serif;
+  font-weight: $weight;
+  font-size: $size;
 }
 
 /**

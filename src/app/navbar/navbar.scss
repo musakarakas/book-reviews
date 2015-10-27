@@ -12,9 +12,7 @@
 }
 
 .navbar-nav {
-  font-family: Brandon-Grotesque, sans-serif;
-  font-weight: bold;
-  font-size: 12px;
+  @include font(12px, bold);
 
   form {
     padding-right: 0;
@@ -25,9 +23,8 @@
       height: 50px;
     }
     input {
+      @include font(11px, normal, Helvetica);
       width: 250px !important;
-      font-family: Helvetica, sans-serif;
-      font-size: 11px;
     }
     button {
       width: 50px;
